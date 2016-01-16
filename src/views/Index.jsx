@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Components
 import Button from 'components/Button.jsx';
 import EventList from 'components/EventList.jsx';
+import Event from 'components/Event.jsx';
 // Stores
 import Store from 'stores/Store.js';
 import AppActions from 'actions/AppActions.js';
@@ -19,7 +20,7 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-		Store.listen(this.onChange.bind(this));
+		Store.listen(this.onChange.bind(this));		
 		AppActions.fetchEvents();
 	}
 	
@@ -34,8 +35,11 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				{ <EventList appActions={AppActions} events={ this.state.events } /> }
-            </div>
+				{ this.state.showEvent !== null && this.state.showEvent !== undefined 
+					? <Event event={ this.state.showEvent } /> 
+					: <EventList appActions={AppActions} events={ this.state.events } /> 
+				}
+			</div>
         );
     }
 };

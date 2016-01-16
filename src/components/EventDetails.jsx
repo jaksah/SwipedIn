@@ -11,6 +11,7 @@ export default class EventDetails extends React.Component {
     render() {
         return (
             <div style={containerStyle}>
+            
                 <div style={headerContainer}>
                     <h3 style={headingStyle}>{this.props.event.title}</h3>
                     <img className="eventImage" style={imageStyle} src={this.props.event.imageUrl} />
@@ -28,6 +29,7 @@ export default class EventDetails extends React.Component {
                     <span style={paragraphLongTextStyle}>{this.props.event.description}</span>
                 </p>
             </div>
+
         );
     }
 };

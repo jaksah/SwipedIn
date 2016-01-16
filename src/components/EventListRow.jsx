@@ -12,7 +12,7 @@ export default class EventListRow extends React.Component {
     }
 
 	showEvent() {
-		this.props.appActions.showEvent(this.props.eventData.id);
+		this.props.appActions.showEvent(this.props.eventData);
 	}
 
 	onHover(toggle) {
