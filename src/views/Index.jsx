@@ -16,6 +16,7 @@ class App extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {};
 	}
 
 	componentDidMount() {
@@ -37,8 +38,9 @@ class App extends React.Component {
 				state: { JSON.stringify(Store.getState()) }
 				<hr />
 				<EventList appActions={AppActions}/>
-                <Swipe name="Joy Friberg" profileImageUrl="/black.png" school="Linköpings universitet" company="Netlight Consulting AB"></Swipe>
-            </div>
+				{ <EventList appActions={AppActions} events={ this.state.events } /> }
+				<Swipe name="Joy Friberg" profileImageUrl="/black.png" school="Linköpings universitet" company="Netlight Consulting AB"></Swipe>
+			</div>
         );
     }
 };
