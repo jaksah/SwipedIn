@@ -34,9 +34,7 @@ class App extends React.Component {
 			<div>
 				state: { JSON.stringify(Store.getState()) }
 				<hr />
-				<span className="glyphicon glyphicon-user"></span>
 				Här lägger vi components
-				<Text text={ 'Ett meddelande' } />
 			</div>
 		);
 	}
