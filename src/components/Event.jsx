@@ -32,7 +32,9 @@ export default class Event extends React.Component {
 
         return (
             <div>
-                <button onClick={ this.close.bind(this) }>close</button>
+                <div style={containerStyle}>
+                    <button  style={iconStyle} onClick={ this.close.bind(this) }><span className="glyphicon glyphicon-remove-circle" /></button>  
+                </div>
                 <EventDetails event={this.props.event}/>
                 <button onClick={ this.startSwiping.bind(this) }>Start swiping</button>
                 <MatchList matched={matched}/>
@@ -40,3 +42,21 @@ export default class Event extends React.Component {
         );
     }
 };
+
+var containerStyle = {
+    width: "100%",
+    height: "30px",
+    position: "relative"
+}
+
+var iconStyle = {
+    fontSize: "20px",
+    lineHeight: "20px",
+    background: "none",
+    color: "#929292",
+    border: "none",
+    padding: "0",
+    position: "absolute",
+    right: "10px",
+    top: "10px"
+}
