@@ -12,6 +12,7 @@ const _mockEvent = function(id) {
 		description:"I was wondering if after all these years you'd like to meet. To go over everything. They say that time's supposed to heal ya. But I ain't done much healing. Hello, can you hear me. I'm in California dreaming about who we used to be. When we were younger and free. I've forgotten how it felt before the world fell at our feet.", 
 		attendees: [{
                 name: "Name 1",
+                profileImageUrl: 'black.png',
                 mutual: 18
             },{
                 name: "Name 2",

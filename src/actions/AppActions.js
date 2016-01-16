@@ -13,6 +13,10 @@ class AppActions {
 	showEvent(id) {
 		return id;
 	}
+
+	startSwiping(event) {
+		return event;
+	}
 }
 
 module.exports = alt.createActions(AppActions);

@@ -11,7 +11,9 @@ class Store {
 			// Receive events from server
 			receiveEvents: AppActions.receiveEvents,
 			// User wants to show an event
-			showEvent: AppActions.showEvent
+			showEvent: AppActions.showEvent,
+			// User wants to start swiping
+			startSwiping: AppActions.startSwiping
 		});
 		this.state = {
 			events: [],
@@ -30,6 +32,15 @@ class Store {
 	
 	receiveEvents(events) {
 		this.setState({ events: events });
+	}
+
+	startSwiping(event) {
+		this.setState({ 
+			swiping: {
+				i: 0,
+				event: event	
+			}
+		});
 	}
 };
 

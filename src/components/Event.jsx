@@ -15,6 +15,10 @@ export default class Event extends React.Component {
         AppActions.showEvent(null);
     }
 
+    startSwiping() {
+        AppActions.startSwiping(this.props.event);
+    }
+
     render() {
         var matched = [{
             id: 1,
@@ -30,6 +34,7 @@ export default class Event extends React.Component {
             <div>
                 <button onClick={ this.close.bind(this) }>close</button>
                 <EventDetails event={this.props.event}/>
+                <button onClick={ this.startSwiping.bind(this) }>Start swiping</button>
                 <MatchList matched={matched}/>
             </div>
         );
