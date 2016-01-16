@@ -2,7 +2,7 @@ var express = require('express'),
     morgan = require('morgan');
 
 var app = express();
-var env = process.env.NODE_ENV || 'development';
+var env = 'development';
 
 var host = process.env.HOST || 'localhost';
 var port = process.env.PORT || 3001;

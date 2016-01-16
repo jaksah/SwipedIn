@@ -1,4 +1,4 @@
-# react-es2015-example
+# SwipedIn
 React, ES2015, Babel, Webpack
 
 To build:
@@ -6,4 +6,10 @@ To build:
 ```
 > npm install
 > webpack
+```
+
+To run:
+
+```
+> npm start
 ```
