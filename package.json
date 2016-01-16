@@ -15,15 +15,28 @@
   },
   "homepage": "https://github.com/jimmieberg/react-es2015-example#readme",
   "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootstrap-webpack": "0.0.5",
+    "css-loader": "^0.23.1",
+    "exports-loader": "^0.6.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "imports-loader": "^0.6.5",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7"
   },
   "devDependencies": {
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
-    "webpack": "^1.12.2",
+    "css-loader": "^0.23.1",
     "express": "^4.13.3",
     "morgan": "^1.6.1",
-    "nodemon": "^1.4.1"
+    "nodemon": "^1.4.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.2"
   }
 }
