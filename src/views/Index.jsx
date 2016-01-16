@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Components
 import Button from 'components/Button.jsx';
 import EventList from 'components/EventList.jsx';
+import Swipe from 'components/Swipe.jsx'
 // Stores
 import Store from 'stores/Store.js';
 import AppActions from 'actions/AppActions.js';
@@ -25,7 +26,7 @@ class App extends React.Component {
 	onChange(state) {
 		this.setState(state);
 	}
-	
+
 	showEvent(id) {
 		AppActions.showEvent(id);
 	}
@@ -36,6 +37,7 @@ class App extends React.Component {
 				state: { JSON.stringify(Store.getState()) }
 				<hr />
 				<EventList appActions={AppActions}/>
+                <Swipe name="Joy Friberg" profileImageUrl="/black.png" school="Linköpings universitet" company="Netlight Consulting AB"></Swipe>
             </div>
         );
     }
