@@ -1,11 +1,16 @@
 'use strict';
 
 import React from 'react';
+import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
 
 export default class EventDetails extends React.Component {
 
     constructor(props) {
         super(props);
+    }
+
+    handleMapClick(){
+        console.log("Map Clicked!");
     }
   
     render() {
@@ -28,6 +33,23 @@ export default class EventDetails extends React.Component {
                     <span style={paragraphDescriptionStyle}>Description</span>
                     <span style={paragraphLongTextStyle}>{this.props.event.description}</span>
                 </p>
+                <GoogleMapLoader
+                    containerElement={
+                      <div
+                        {...this.props}
+                        style={{
+                          height: "250px",
+                        }}
+                      ></div>
+                    }
+                    googleMapElement={
+                        <GoogleMap
+                            defaultZoom={15}
+                            defaultCenter={{lat: 59.3327168, lng: 18.0747502}}
+                        >
+                        </GoogleMap>
+                      }
+                    ></GoogleMapLoader>
             </div>
 
         );
