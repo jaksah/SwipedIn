@@ -27,7 +27,7 @@ class App extends React.Component {
 	onChange(state) {
 		this.setState(state);
 	}
-	
+
 	showEvent(id) {
 		AppActions.showEvent(id);
 	}
