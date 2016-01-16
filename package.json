@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/jimmieberg/react-es2015-example#readme",
   "dependencies": {
+    "alt": "^0.18.1",
     "bootstrap": "^3.3.6",
     "bootstrap-webpack": "0.0.5",
     "css-loader": "^0.23.1",
