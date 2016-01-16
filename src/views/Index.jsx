@@ -12,31 +12,34 @@ import AppActions from 'actions/AppActions.js';
 
 class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+	constructor(props) {
+		super(props);
+	}
 
-    componentDidMount() {
-    	Store.listen(this.onChange.bind(this));
-    }
+	componentDidMount() {
+		Store.listen(this.onChange.bind(this));
+		AppActions.fetchEvents();
+	}
 	
-    onChange(state) {
-    	this.setState(state);
-    }
-   
+	onChange(state) {
+		this.setState(state);
+	}
+	
 	showEvent(id) {
 		AppActions.showEvent(id);
 	}
    
-    render() {
-        return (
-            <div>
-                state: { JSON.stringify(Store.getState()) }
+	render() {
+		return (
+			<div>
+				state: { JSON.stringify(Store.getState()) }
 				<hr />
+				<span className="glyphicon glyphicon-user"></span>
 				Här lägger vi components
-            </div>
-        );
-    }
+				<Text text={ 'Ett meddelande' } />
+			</div>
+		);
+	}
 };
 
 const Index = {

@@ -1,24 +1,36 @@
-const alt = require('alt-instance.js');
-const AppActions = require('actions/AppActions.js');
+import alt from 'alt-instance.js';
+import AppActions from 'actions/AppActions.js';
+import DataSource from 'utils/DataSource.js';
 
 class Store {
 
-    constructor() {
-        this.bindListeners({
-            showEvent: AppActions.showEvent
-        });
-        this.state = {
-            events: [],
-			showEvent: null,
-        };
-    }
+	constructor() {
+		this.bindListeners({
+			// We want to fetch events from server
+			fetchEvents: AppActions.fetchEvents,
+			// Receive events from server
+			receiveEvents: AppActions.receiveEvents,
+			// User wants to show an event
+			showEvent: AppActions.showEvent
+		});
+		this.state = {
+			events: [],
+			showEvent: null
+		};
+		this.registerAsync(DataSource);
+	}
 
-    /**
-     * Adds an item to the store
-     */
-    showEvent(id) {
-        this.setState({ showEvent: id });
-    }
+	showEvent(id) {
+		this.setState({ showEvent: id });
+	}
+	
+	fetchEvents() {
+		this.getInstance().getEvents();
+	}
+	
+	receiveEvents(events) {
+		this.setState({ events: events });
+	}
 };
 
 export default alt.createStore(Store, 'Store');
