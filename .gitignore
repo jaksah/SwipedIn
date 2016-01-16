@@ -1,3 +1,8 @@
-public/resources
+public/bundle.js
+public/*.woff2
+public/*.ttf
+public/*.eot
+public/*.woff
+public/*.svg
 node_modules/
 npm-debug.log
