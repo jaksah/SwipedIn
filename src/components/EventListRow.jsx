@@ -29,7 +29,8 @@ export default class EventListRow extends React.Component {
 			display: "flex",
 			padding: "5px 0",
 			borderBottom: "1px solid whitesmoke",
-			backgroundColor: this.state.hover ? 'aliceblue' : 'white'
+			backgroundColor: this.state.hover ? 'aliceblue' : 'white',
+			cursor: this.state.hover ? 'pointer' : 'default'
 		};
 		var eventTitleStyle = {
 			padding:0,
