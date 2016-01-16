@@ -10,7 +10,7 @@ const Index = {
 	init: function(elementId) {
 		ReactDOM.render(
 			<div>
-				<Button/>
+				SwipedIn
 			</div>,
 			document.getElementById(elementId)
 		);
