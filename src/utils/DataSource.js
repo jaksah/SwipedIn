@@ -42,7 +42,7 @@ const DataSource = {
 		remote: function(state) {
 			return new Promise(function(resolve, reject) {
 				setTimeout(function() {
-					resolve();
+					resolve(_mockEvents());
 				}, 500);
 			});
 		},

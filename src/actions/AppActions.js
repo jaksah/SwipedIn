@@ -6,8 +6,8 @@ class AppActions {
 		return true;
 	}
 	
-	receiveEvents() {
-		return [{ name: 'test' }];
+	receiveEvents(events) {
+		return events;
 	}
 	
 	showEvent(id) {
