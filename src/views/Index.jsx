@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // Components
 import Button from 'components/Button.jsx';
+import EventList from 'components/EventList.jsx';
 // Stores
 import Store from 'stores/Store.js';
 import AppActions from 'actions/AppActions.js';
@@ -34,10 +35,10 @@ class App extends React.Component {
 			<div>
 				state: { JSON.stringify(Store.getState()) }
 				<hr />
-				Här lägger vi components
-			</div>
-		);
-	}
+				<EventList appActions={AppActions}/>
+            </div>
+        );
+    }
 };
 
 const Index = {
