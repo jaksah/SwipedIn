@@ -14,24 +14,39 @@ export default class EventList extends React.Component {
 	
 	render() {
 		var events = this.props.events || [];
-		console.log(this.props);
 		
 		events = _.sortBy(events, function(e){return e.startsAt.date;});
 		var appActions = this.props.appActions;
 		var prevDate = undefined;
 
 		var rows = [];
+		var eventsByDate = {};
+
 		events.map(function(event, i){
-			if(event.startsAt.date != prevDate){
-				rows.push(
-					<div key={'header' + i}>
-						<h3 style={{margin: "40px 0 0 0"}}>{event.startsAt.date}</h3>
-						<hr></hr>
-					</div>
-					);
-				prevDate = event.startsAt.date;
+			// Initiate array if it doesn't exist
+			if (!eventsByDate[event.startsAt.date]){
+				eventsByDate[event.startsAt.date] = [];
 			}
-			rows.push(<EventListRow key={event.id} appActions={appActions} eventData={event} />)
+
+			eventsByDate[event.startsAt.date].push(event);
+		});
+
+		_.forEach(eventsByDate, function(events, date) {
+			
+			//
+			var eventRows = [];
+			_.forEach(events, function(event){
+				eventRows.push(<EventListRow key={event.id} appActions={appActions} eventData={event} />);
+			});
+
+			// Add the date separator
+			rows.push(
+				<div key={date}>
+					<h3 style={{margin: "40px 0 0 0"}}>{date}</h3>
+					<hr></hr>
+					{eventRows}
+				</div>
+			)
 		});
 
 		return (
